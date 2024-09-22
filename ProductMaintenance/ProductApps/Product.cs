@@ -54,7 +54,7 @@ namespace ProductApps
         }
 
         //Constructor for Product
-        public Product(decimal price, int quantity)
+        public Product(decimal price, int quantity, decimal v)
         {
             Price = price;
             Quantity = quantity;
