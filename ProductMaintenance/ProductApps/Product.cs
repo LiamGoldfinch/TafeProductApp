@@ -15,6 +15,9 @@ namespace ProductApps
         private decimal wrapping;
         private decimal gst;
 
+        const decimal DELIVERY_CHARGE = 25;
+        const decimal WRAPPING_CHARGE = 5; 
+
         private decimal Price
         {
             get { return price; }
@@ -54,12 +57,12 @@ namespace ProductApps
         }
 
         //Constructor for Product
-        public Product(decimal price, int quantity, decimal v)
+        public Product(decimal price, int quantity)
         {
             Price = price;
             Quantity = quantity;
         }
-
+        
         //Calculate the total payment
         public void calTotalPayment()
         {
