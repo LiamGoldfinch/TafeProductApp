@@ -26,14 +26,16 @@ namespace ProductApps
         {
             InitializeComponent();
         }
-
+      
         private void calculateButton_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                cProduct = new Product(Convert.ToDecimal(priceTextBox.Text), Convert.ToInt16(quantityTextBox.Text), Convert.ToDecimal(totalChargeTextBlock.Text));
+                cProduct = new Product(Convert.ToDecimal(priceTextBox.Text), Convert.ToInt16(quantityTextBox.Text));
                 cProduct.calTotalPayment();
                 totalPaymentTextBlock.Text = Convert.ToString(cProduct.TotalPayment);
+                deliveryChargeTextBox.Text = Convert.ToString(cProduct.TotalPayment + 25.00m);
+                wrapChargeTextBox.Text = Convert.ToString(cProduct.TotalPayment + 25.00m + 5.00m);
             }
             catch (FormatException)
             {
